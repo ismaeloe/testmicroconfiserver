@@ -17,6 +17,7 @@ spring:
           uri: lb://customer-service
           predicates:
             - Path=/customers/**
+            - Header=Authorization,Bearer (.*)
         - id: product-service
           uri: lb://product-service
           predicates:
